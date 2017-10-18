@@ -10,19 +10,18 @@ namespace OperasWebSites.Models
     {
         protected override void Seed(OperasDB context)
         {
+            base.Seed(context);
+
             var operas = new List<Opera>
             {
-                new Opera() {
+                new Opera {
                     Title = "Cosi Fan Tutte",
                     Year = 1790,
-                    Composer = "Mozart"
-            }
+                    Composer = "Mozart",
+                }
             };
 
-
-            operas.ForEach(s =>
-           context.Operas.Add(s));
-
+            operas.ForEach(s => context.Operas.Add(s));
             context.SaveChanges();
         }
     }
