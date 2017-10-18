@@ -36,7 +36,6 @@ namespace OperasWebSites.Controllers
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
-            ViewBag.Title = "Add an Opera";
             return View("Create", newOpera);
         }
 
@@ -51,8 +50,6 @@ namespace OperasWebSites.Controllers
             }
             else
             {
-                ViewBag.Title = "Try again";
-
                 return View("Create", newOpera);
             }
         }
