@@ -116,6 +116,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Opera\Details.cshtml" />
     <Content Include="Views\Opera\Index.cshtml" />
+    <Content Include="Views\Opera\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
