@@ -33,6 +33,20 @@ namespace OperasWebSites.Controllers
             }
         }
 
+        public ActionResult DetailsByTitle(string title)
+        {
+            Opera opera = (Opera)(from o in contextDB.Operas
+                                  where o.TitleKey == title
+                                  select o).FirstOrDefault();
+
+            if( opera == null )
+            {
+                return HttpNotFound();
+            }
+
+            return View("Details", opera);
+        }
+
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
@@ -44,6 +58,7 @@ namespace OperasWebSites.Controllers
         {
             if (ModelState.IsValid)
             {
+                newOpera.TitleKey = newOpera.Title.Replace(' ', '_').ToLower();
                 contextDB.Operas.Add(newOpera);
                 contextDB.SaveChanges();
                 return RedirectToAction("Index");

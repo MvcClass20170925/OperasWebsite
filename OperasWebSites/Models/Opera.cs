@@ -12,6 +12,8 @@ namespace OperasWebSites.Models
         [Required]
         [StringLength(200)]
         public string Title { get; set; }
+
+        public string TitleKey { get; set; }
         [CheckValidYear]
         public int Year { get; set; }
         [Required]
