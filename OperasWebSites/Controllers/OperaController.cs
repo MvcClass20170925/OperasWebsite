@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using OperasWebSites.Models;
+using System.Web.UI;
 
 namespace OperasWebSites.Controllers
 {
@@ -15,6 +16,9 @@ namespace OperasWebSites.Controllers
         //
         // GET: /Opera/
 
+        [OutputCache(Duration = 600, 
+            Location = OutputCacheLocation.Server, 
+            VaryByParam ="none")]
         public ActionResult Index()
         {
             return View("Index", contextDB.Operas.ToList());
@@ -61,6 +65,8 @@ namespace OperasWebSites.Controllers
                 newOpera.TitleKey = newOpera.Title.Replace(' ', '_').ToLower();
                 contextDB.Operas.Add(newOpera);
                 contextDB.SaveChanges();
+                var urlToRemove = Url.Action("Index", "Opera");
+                HttpResponse.RemoveOutputCacheItem(urlToRemove);
                 return RedirectToAction("Index");
             }
             else
