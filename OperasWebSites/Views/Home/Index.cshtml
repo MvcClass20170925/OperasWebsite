@@ -1,18 +1,11 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Operas I Have Seen";
 }
 
-<!DOCTYPE html>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Operas I Have Seen</title>
-</head>
-<body>
     <div>
-        Menu: @Html.MvcSiteMap().Menu(false,false,true)
-        Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
         <h1>Operas I Have Seen</h1>
 
         <p>
@@ -20,6 +13,16 @@
             to opera. Start by looking at the 
             @Html.ActionLink("operas I've seen.", "Index", "Opera")
         </p>
+
+        <div id="divMessage" ></div>
+
+        @Ajax.ActionLink(
+       "Refresh", "HelloWorld",
+       new AjaxOptions
+       {
+           HttpMethod = "POST",
+           UpdateTargetId = "divMessage",
+           InsertionMode = InsertionMode.InsertAfter
+       }
+       )
     </div>
-</body>
-</html>

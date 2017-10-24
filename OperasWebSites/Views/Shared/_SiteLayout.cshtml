@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/PhotoSharingStyles.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div> 
+        <nav>
+            Menu: @Html.MvcSiteMap().Menu(false, true, true)
+            Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
+        </nav>
+
+
+        @RenderBody()
+    </div>
+</body>
+</html>

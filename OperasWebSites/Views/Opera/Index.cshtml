@@ -1,19 +1,9 @@
 ﻿@model IEnumerable<OperasWebSites.Models.Opera>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    Menu: @Html.MvcSiteMap().Menu(false, false, true)
-    Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -49,5 +39,3 @@
     }
     
     </table>
-</body>
-</html>

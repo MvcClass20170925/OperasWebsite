@@ -16,5 +16,12 @@ namespace OperasWebSites.Controllers
             return View("Index");
         }
 
+        public PartialViewResult HelloWorld()
+        {
+            ViewBag.Message = "Hello World " + DateTime.Now.ToString();
+
+            return PartialView();
+        }
+
     }
 }
