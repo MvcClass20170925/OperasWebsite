@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/PhotoSharingStyles.css" rel="stylesheet" />
-
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 </head>
-<body>
+<body style="@Html.Action("GetBackground","Home")">
     <div> 
         <nav>
             Menu: @Html.MvcSiteMap().Menu(false, true, true)
             Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
         </nav>
+
+        @if(Request.IsAuthenticated)
+        {
+            @Html.ActionLink("Reset Password", "ResetPassword", "Account");
+        }
 
 
         @RenderBody()

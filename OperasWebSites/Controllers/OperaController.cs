@@ -51,6 +51,7 @@ namespace OperasWebSites.Controllers
             return View("Details", opera);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             Opera newOpera = new Opera();
@@ -58,6 +59,7 @@ namespace OperasWebSites.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Opera newOpera)
         {
             if (ModelState.IsValid)
