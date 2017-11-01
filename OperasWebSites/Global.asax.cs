@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Data.Entity;
 using OperasWebSites.Models;
+using System.Web.Http;
 
 namespace OperasWebSites
 {
@@ -14,6 +15,8 @@ namespace OperasWebSites
         protected void Application_Start()
         {
             Database.SetInitializer(new OperasInitializer());
+
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

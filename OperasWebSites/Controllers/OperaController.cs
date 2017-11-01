@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using OperasWebSites.Models;
 using System.Web.UI;
+using OperasWebSites.MyService;
 
 namespace OperasWebSites.Controllers
 {
@@ -29,6 +30,8 @@ namespace OperasWebSites.Controllers
             Opera opera = contextDB.Operas.Find(id);
             if (opera != null)
             {
+                string location = new MyServiceClient().GetLocation("Copenhagen");
+                opera.GeoLocation = location;
                 return View("Details", opera);
             }
             else

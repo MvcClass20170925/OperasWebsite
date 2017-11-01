@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperasWebSites", "OperasWebSites\OperasWebSites.csproj", "{BF7756A8-20AB-4653-B25D-0066BB55B441}"
+	ProjectSection(ProjectDependencies) = postProject
+		{59A3717A-2548-4E20-9173-13F8C3B692DC} = {59A3717A-2548-4E20-9173-13F8C3B692DC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperasWebSiteTests", "OperasWebSiteTests\OperasWebSiteTests.csproj", "{1F9ADDB2-4766-47C5-9C18-692026BDFA62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyService", "MyService\MyService.csproj", "{59A3717A-2548-4E20-9173-13F8C3B692DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{1F9ADDB2-4766-47C5-9C18-692026BDFA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F9ADDB2-4766-47C5-9C18-692026BDFA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F9ADDB2-4766-47C5-9C18-692026BDFA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A3717A-2548-4E20-9173-13F8C3B692DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A3717A-2548-4E20-9173-13F8C3B692DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A3717A-2548-4E20-9173-13F8C3B692DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A3717A-2548-4E20-9173-13F8C3B692DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

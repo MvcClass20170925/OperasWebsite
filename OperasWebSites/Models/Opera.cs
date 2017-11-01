@@ -18,6 +18,8 @@ namespace OperasWebSites.Models
         public int Year { get; set; }
         [Required]
         public string Composer { get; set; }
+
+        public string GeoLocation { get; set; }
     }
 
     public class CheckValidYear : ValidationAttribute
